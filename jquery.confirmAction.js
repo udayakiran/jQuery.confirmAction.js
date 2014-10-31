@@ -22,8 +22,8 @@
     options.button = $(this);
 
     this.click(function(e) {
-        e.preventDefault();
-        $.confirmAction(options, e);
+      e.preventDefault();
+      $.confirmAction(options, e);
     });
 
     return this;
@@ -34,7 +34,7 @@
    * @param options {text, container, confirm, show, cancel, confirmButton, cancelButton}
    */
   $.confirmAction = function(options, e) {
-    // Default options
+// Default options
     var settings = $.extend({
       text: "Are you sure?",
       confirmButton: "Yes",
@@ -43,8 +43,11 @@
       isConfirmationNeeded: function() {
         return true;
       },
+      isEnabled: function() {
+        return true;
+      },
       show: function(o) {
-        //just do nothing
+//just do nothing
       },
       confirm: function(o) {
         alert("you confirmed this");
@@ -72,11 +75,13 @@
       settings.cancel(settings.button);
     });
 
-    if (settings.isConfirmationNeeded()) {
-      settings.container.show();
-      settings.show(settings.button);
-    } else {
-      settings.confirm(settings.button);
+    if (settings.isEnabled()) {
+      if (settings.isConfirmationNeeded()) {
+        settings.container.show();
+        settings.show(settings.button);
+      } else {
+        settings.confirm(settings.button);
+      }
     }
   }
 
