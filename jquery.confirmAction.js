@@ -58,11 +58,12 @@
       button: null
     }, options);
 
-    var buttons = '<div class="columns"><div class ="column quarter_margin_top blink_dark_link"><a class="cancel-link mild_grey">' + settings.cancelButton + '</a></div>'
-            + '<div class ="column"><a class="confirm-link smaller_button custom_red_button", style = "color: white !important;">' + settings.confirmButton + '</a></div></div>';
-    var containerHTML = '<div class="row padding_bottom_30 quarter_margin_bottom"><div class="confirmation-message">'
-            + '<span class="confirmation-text" style="padding-right:3px">' + settings.text + '</span></div></div>'
-            + '<div class="row float_right position_bottom_right"><span class="confirmation-links">' + buttons + '</span>'
+    var buttons = '<a class="confirm-link">' + settings.confirmButton + '</a>'
+            + '<span class="confirm-link-seperator" style="padding:0px 3px;color:gray"> l </span>'
+            + '<a class="cancel-link">' + settings.cancelButton + '</a>';
+    var containerHTML = '<div class="confirmation-message">'
+            + '<span class="confirmation-text" style="padding-right:3px">' + settings.text + '</span>'
+            + '<span class="confirmation-links">' + buttons + '</span>'
             + '</div>';
 
     settings.container.html(containerHTML);
