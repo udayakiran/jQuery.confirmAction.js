@@ -40,6 +40,7 @@
       confirmButton: "Yes",
       cancelButton: "No",
       container: null,
+      avoid_double_click: false,
       isConfirmationNeeded: function() {
         return true;
       },
@@ -68,11 +69,33 @@
 
     settings.container.html(containerHTML);
 
+    var running_confirm = false;
     settings.container.find(".confirm-link").click(function(e) {
-      settings.confirm(settings.button);
+        
+      if(settings.avoid_double_click && running_confirm) {
+        return;
+      }
+        
+      settings.confirm(settings.button); //confirm callback.
+      
+      if(settings.avoid_double_click) { //just avoiding a click in next sec.
+        running_confirm = true;
+        setTimeout(function(){  running_confirm = false; },1000);
+       }
     });
+    
+    var running_cancel = false;
     settings.container.find(".cancel-link").click(function(e) {
-      settings.cancel(settings.button);
+       if(settings.avoid_double_click && running_cancel) {
+        return;
+      }
+        
+      settings.cancel(settings.button); //cancel callback.
+      
+      if(settings.avoid_double_click) { //just avoiding a click in next sec.
+        running_cancel = true;
+        setTimeout(function(){  running_cancel = false; },1000);
+       }
     });
 
     if (settings.isEnabled()) {
