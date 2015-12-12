@@ -6,8 +6,7 @@ This is a jquery plugin that confirms an action on click of an element and execu
 
 1. Download jquery.confirmAction.js OR jquery.confirmAction.min.js
 
-2. Include jQuery file (1.7+) and the plugin file (or .min file) in your HTML page
-
+2. Include jQuery file (1.7+) and the plugin file (or .min file) in your HTML page.
 ```
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="jquery.confirmAction.min.js"></script>
