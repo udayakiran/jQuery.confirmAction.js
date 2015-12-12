@@ -18,6 +18,7 @@ This is a jquery plugin that confirms an action on click of an element and execu
 Say there is a link/button with id "confirm_link", if you want to display a confirmation message to the user on clicking this link and decide weather to proceede or not -
 ```
 <script type="text/javascript">
+
      jQuery(document).ready(function () {
         jQuery("#confirm_link").confirmAction({container: jQuery("#<container_id>"),
           text: "<Text that describes the confirmation related info>",
