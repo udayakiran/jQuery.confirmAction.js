@@ -31,7 +31,9 @@ Say there is a link/button with id "confirm_link", if you want to display a conf
             //Code to be executed on clicking confirm button.
           }
         });
-      });    </script>
+      });    
+      
+ </script>
 ```
 ## Contributing
 
