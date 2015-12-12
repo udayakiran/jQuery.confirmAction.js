@@ -11,7 +11,7 @@ This is a jquery plugin that confirms an action on click of an element and execu
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="jquery.confirmAction.min.js"></script>
 ```
-3. Example usage - 
+Example usage - 
 
 Say there is a link/button with id "confirm_link", if you want to display a confirmation message to the user on clicking this link and decide weather to proceede or not -
 ```
